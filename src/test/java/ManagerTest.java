@@ -42,4 +42,22 @@ public class ManagerTest {
     public void hasDeptName() {
         assertEquals("Managed Services", manager.getDeptName());
     }
+
+    @Test
+    public void cannotDecreaseSalary() {
+        manager.raiseSalary(-20.0);
+        assertEquals(100.0, manager.getSalary());
+    }
+
+    @Test
+    public void canSetName() {
+        manager.setName("Frank");
+        assertEquals("Frank", manager.getName());
+    }
+
+    @Test
+    public void cannotSetNameToNull() {
+        manager.setName(null);
+        assertEquals("Bob", manager.getName());
+    }
 }
